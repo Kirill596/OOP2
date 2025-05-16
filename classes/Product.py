@@ -18,6 +18,10 @@ class ReprLoggingMixin:
         super().__init__(*args, **kwargs)
 
     def __repr__(self) -> str:
+        """
+        Стандартное представление объекта для разработчика
+        Формат: <ClassName(arg1=value1, arg2=value2)>
+        """
         args_str = ', '.join(f"{k}={v!r}" for k, v in self.__dict__.items())
         return f"<{self.__class__.__name__}({args_str})>"
 
@@ -31,7 +35,6 @@ class BaseProduct(ABC):
         self.description = description
         self._price = price
         self.quantity = quantity
-        super().__init__()  # Добавлен вызов super().__init__()
 
     @abstractmethod
     def __str__(self):

@@ -19,16 +19,19 @@ def test_init(category: Category) -> None:
     assert category.all_category == 1
     assert category.all_product == 3
 
+
 def test_products(category: Category) -> None:
     assert category.products == (
         "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт. Iphone 15, 210000.0 "
         "руб. Остаток: 8 шт. Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт. "
     )
 
+
 def test_add_product(category: Category) -> None:
     all_product1 = category.all_product
     category.add_product(Product("Iphone 15", "512GB, Gray space", 210000.0, 8))
     assert all_product1 < category.all_product
+
 
 def test_category_str():
     product1 = Product("Телефон", "Смартфон", 50000.0, 10)

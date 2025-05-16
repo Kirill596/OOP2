@@ -3,6 +3,13 @@ from classes.Product import Product
 
 class Category:
     """Класс категории товаров"""
+
+    name: str
+    description: str
+    __products: list
+    all_category: int
+    all_product: int
+
     all_category = 0
     all_product = 0
 
@@ -18,14 +25,13 @@ class Category:
 
     @property
     def products(self) -> str:
-        return " ".join(str(product) for product in self.__products) + " "
+        return "\n".join(str(product) for product in self.__products)
 
     def add_product(self, product: Product) -> None:
         if not isinstance(product, Product):
             raise TypeError("Можно добавлять только объекты класса Product или его наследников")
-        if product not in self.__products:
-            self.__products.append(product)
-            Category.all_product += 1
+        self.__products.append(product)
+        Category.all_product += 1
 
     def __str__(self) -> str:
         total_quantity = sum(product.quantity for product in self.__products)
