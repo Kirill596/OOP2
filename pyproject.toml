@@ -1,0 +1,19 @@
+[project]
+name = "oop2"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Stepanov.K",email = "sun1zux@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "flake8 (>=7.2.0,<8.0.0)",
+    "pytest (>=8.3.5,<9.0.0)",
+    "dotenv (>=0.9.9,<0.10.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
