@@ -39,9 +39,9 @@ class Category:
 
         def split(self, sep=None, maxsplit=-1):
             tokens = super().split(sep, maxsplit)
-            need = len(self._owner._products)*12
+            need = len(self._owner._products) * 12
             if len(tokens) < need:
-                tokens.extend([""]*(need-len(tokens)))
+                tokens.extend([""] * (need - len(tokens)))
             return tokens
 
     def __init__(self, name: str, description: str, products):
@@ -125,5 +125,6 @@ def run_tests():
         assert False, "should raise"
     except ValueError:
         pass
+
 
 run_tests()
