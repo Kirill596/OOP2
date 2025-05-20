@@ -1,0 +1,6 @@
+# Ignored files and directories
+.idea/
+__pycache__/
+*.pyc
+htmlcov/
+.coverage
